@@ -21,29 +21,35 @@ function quadraticBiggestFish(fishes) {
  //console.log(quadraticBiggestFish(fishies));
 
 function nlognBiggestFish(fishes) {
-  // we can splited in half/ sublist1,2 and pass into resursive calls
-  //if()
   let sorted = fishes.sort((a, b) => b.length - a.length)     //based on string's length
-  //console.log(sorted)
   return sorted[0];
-
-  //console.log(sublist1, sublist2);
-
-
-
 }
-console.log(nlognBiggestFish(fishies))
+// console.log(nlognBiggestFish(fishies))
 
 
 function linearBiggestFish(fishes) {
-  // Code goes here ...
+  let longest = fishes[0]
+  for(let i=1; i<fishes.length; i++) {
+    if(fishes[i].length > longest.length) {
+      longest = fishes[i]
+    }
+  }
+  return longest
 }
 
+// console.log(linearBiggestFish(fishies))
 
 tilesArray = ["up", "right-up", "right", "right-down", "down", "left-down", "left", "left-up"]
 function slowDance(direction, tilesArray) {
-  // Code goes here ...
+  for (let i=0;i<tilesArray.length;i++) {
+    if(direction === tilesArray[i]) return i;
+  }
 }
+
+// console.log(slowDance('up',tilesArray)) // 0
+// console.log(slowDance('right',tilesArray)) // 2
+// console.log(slowDance('down',tilesArray)) // 4
+
 
 
 tilesObj = {
@@ -57,5 +63,10 @@ tilesObj = {
   "left-up": 7
 }
 function fastDance(direction, tilesObj) {
-  // Code goes here ...
+  console.log(tilesObj)
+  return tilesObj[direction]
 }
+
+// console.log(fastDance('up',tilesObj)) // 0
+// console.log(fastDance('right',tilesObj)) // 2
+// console.log(fastDance('down',tilesObj)) // 4
