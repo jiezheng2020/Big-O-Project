@@ -48,19 +48,14 @@ function thirdAnagram(str1, str2) {
       obj2[word2[i]] += 1;
     }
     if(!obj2[word2[i]]){
-      console.log("hello")
       obj2[word2[i]] = 1
     }
-    // let obj1Keys = Object.keys(obj1)
-    // let obj2Keys = Object.keys(obj2)
+  }
     for(key in obj1){
       if(obj1[key] !== obj2[key]){
-        console.log(obj1[key], obj2[key])
-        console.log(obj2, key)
         return false;
       }
     }
-  }
   return true;
 }
 
