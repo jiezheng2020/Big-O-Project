@@ -1,11 +1,38 @@
-function quadraticBiggestFish(fishes) {
-  // Code goes here ...
-}
+const fishies = ['fish', 'fiiish', 'fiiiiish', 'fiiiish', 'fffish',
+'ffiiiiisshh', 'fsh', 'fiiiissshhhhhh'];
 
+function quadraticBiggestFish(fishes) {
+  let longest = fishes[0];
+
+  for(let i = 1; i < fishes.length; i++){
+    let word = fishes[i];
+    let counter = 0;
+    for (let j = 0; j < word.split("").length; j++){
+      counter ++;
+    }
+
+    if (counter > longest.split("").length){
+
+      longest = word
+    }
+  }
+  return longest;
+}
+ //console.log(quadraticBiggestFish(fishies));
 
 function nlognBiggestFish(fishes) {
-  // Code goes here ...
+  // we can splited in half/ sublist1,2 and pass into resursive calls
+  //if()
+  let sorted = fishes.sort((a, b) => b.length - a.length)     //based on string's length
+  //console.log(sorted)
+  return sorted[0];
+
+  //console.log(sublist1, sublist2);
+
+
+
 }
+console.log(nlognBiggestFish(fishies))
 
 
 function linearBiggestFish(fishes) {
